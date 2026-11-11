@@ -219,6 +219,9 @@ app.get("/api/sessions/:id", (c) => {
   return d ? c.json(d) : c.json({ error: "not found" }, 404);
 });
 
+// 存在しない API は、画面の HTML ではなく 404 を返す
+app.all("/api/*", (c) => c.json({ error: "not found" }, 404));
+
 if (existsSync(WEB_DIST)) {
   app.use("/*", serveStatic({ root: WEB_DIST }));
   app.get("*", serveStatic({ path: join(WEB_DIST, "index.html") }));
