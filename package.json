@@ -1,0 +1,19 @@
+{
+  "name": "kanseishitsu",
+  "private": true,
+  "type": "module",
+  "workspaces": ["packages/*", "apps/*"],
+  "scripts": {
+    "dev:server": "bun --watch apps/server/src/index.ts",
+    "dev:web": "cd apps/web && bun run dev",
+    "build:web": "cd apps/web && bun run build",
+    "build:agent": "cd apps/agent && bun run build",
+    "typecheck": "tsc -p packages/shared && tsc -p apps/server && tsc -p apps/web && tsc -p apps/agent",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "bun": "1.4.2",
+    "typescript": "^5.6.0"
+  }
+}

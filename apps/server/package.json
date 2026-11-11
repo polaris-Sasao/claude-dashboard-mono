@@ -1,0 +1,12 @@
+{
+  "name": "@kanseishitsu/server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "bun src/index.ts"
+  },
+  "dependencies": {
+    "@kanseishitsu/shared": "workspace:*",
+    "hono": "^4.13.13"
+  }
+}

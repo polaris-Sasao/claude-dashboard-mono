@@ -1,0 +1,12 @@
+node_modules/
+dist/
+*.db
+*.db-shm
+*.db-wal
+*.log
+.env
+config.local.json
+apps/agent/bin/
+.DS_Store
+# 作業メモ（公開しない）
+CLAUDE.local.md
